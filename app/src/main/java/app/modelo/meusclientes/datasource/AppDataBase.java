@@ -7,13 +7,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.marcelo.appminhaideia.core.AppUtil;
-import com.marcelo.appminhaideia.datamodel.ClienteDataModel;
-import com.marcelo.appminhaideia.datamodel.ProdutoDataModel;
-import com.marcelo.appminhaideia.model.Cliente;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import app.modelo.meusclientes.api.AppUtil;
+import app.modelo.meusclientes.datamodel.ClienteDataModel;
+import app.modelo.meusclientes.model.Cliente;
 
 public class AppDataBase extends SQLiteOpenHelper {
 
@@ -38,10 +37,7 @@ public class AppDataBase extends SQLiteOpenHelper {
 
         Log.d(AppUtil.TAG, "AppDataBase: TabelaCliente " + ClienteDataModel.criarTabela());
 
-        db.execSQL(ProdutoDataModel.criarTabela());
-
-        Log.d(AppUtil.TAG, "AppDataBase: TabelaProduto " + ProdutoDataModel.criarTabela());
-    }
+     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
