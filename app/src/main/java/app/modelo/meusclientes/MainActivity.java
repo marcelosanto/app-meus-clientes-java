@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        // TODO: opter ID para a opção selecionada no MENU DRAWER
+        // TODO: obter ID para a opção selecionada no MENU DRAWER
         if (id == R.id.nav_preto) {
 
             menu = navigationView.getMenu();

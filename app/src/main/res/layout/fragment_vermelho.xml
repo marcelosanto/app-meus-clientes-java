@@ -17,6 +17,6 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="@color/colorPrimary"
-        android:text="@string/modelo_fragment" />
+        android:text="@string/fragmento_vermelho" />
 
 </FrameLayout>
