@@ -1,4 +1,4 @@
-package app.modelo.meusclientes;
+package app.modelo.meusclientes.view;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import app.modelo.meusclientes.R;
 
 
 public class ModeloAzulFragment extends Fragment {
@@ -31,6 +33,8 @@ public class ModeloAzulFragment extends Fragment {
         view =  inflater.inflate(R.layout.fragment_azul, container, false);
 
         TextView txtTitulo = view.findViewById(R.id.txtTitulo);
+
+        txtTitulo.setText(R.string.fragmento_azul);
 
         txtTitulo.setTextColor(ColorStateList.valueOf(Color.WHITE));
 

@@ -1,4 +1,4 @@
-package app.modelo.meusclientes;
+package app.modelo.meusclientes.view;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +17,8 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
+
+import app.modelo.meusclientes.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -31,7 +32,6 @@ public class MainActivity extends AppCompatActivity
     MenuItem nav_vermelho;
     MenuItem nav_azul;
 
-    TextView txtTitulo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +58,6 @@ public class MainActivity extends AppCompatActivity
 
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        txtTitulo = findViewById(R.id.txtTitulo);
 
         fragmentManager = getSupportFragmentManager();
 
@@ -128,7 +126,7 @@ public class MainActivity extends AppCompatActivity
 
             nav_preto = menu.findItem(R.id.nav_preto);
 
-            nav_preto.setTitle("Preto");
+            nav_preto.setTitle("Preto ");
 
             nav_vermelho = menu.findItem(R.id.nav_vermelho);
             nav_vermelho.setTitle("Vermelho Ativado");
