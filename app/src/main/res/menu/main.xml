@@ -5,7 +5,7 @@
     <item
         android:id="@+id/action_perfil"
         android:orderInCategory="100"
-        android:title="Perfil"
+        android:title="@string/meu_perfil"
         app:showAsAction="never" />
 
     <item

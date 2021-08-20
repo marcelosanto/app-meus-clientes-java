@@ -3,4 +3,9 @@
     <color name="colorPrimary">#4CAF50</color>
     <color name="colorPrimaryDark">#859F67</color>
     <color name="colorAccent">#FFC107</color>
+
+    <!-- Cores de Backgrounds dos Fragments -->
+    <color name="azul">#07487C</color>
+    <color name="preto">#0C0C0C</color>
+    <color name="vermelho">#8F1108</color>
 </resources>
