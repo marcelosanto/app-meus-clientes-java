@@ -21,6 +21,9 @@ import com.google.android.material.snackbar.Snackbar;
 import app.modelo.meusclientes.R;
 import app.modelo.meusclientes.controller.ClienteController;
 
+// TODO - Criar um novo fragmento (Classe Nova para listar os clientes (CARDS))
+// TODO - Criar o novo Layout para suporte aos CARDS
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -29,7 +32,7 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView;
 
     Menu menu;
-    MenuItem nav_preto, nav_vermelho, nav_azul, nav_add_cliente, nav_listar_clientes;
+    MenuItem nav_preto, nav_vermelho, nav_azul, nav_add_cliente, nav_listar_clientes, nav_listar_clientes_card;
 
 
     @Override
@@ -122,6 +125,9 @@ public class MainActivity extends AppCompatActivity
             nav_listar_clientes = menu.findItem(R.id.nav_lista_de_clientes);
             nav_listar_clientes.setTitle("Listar Clientes");
 
+            nav_listar_clientes_card = menu.findItem(R.id.nav_lista_de_clientes_card);
+            nav_listar_clientes_card.setTitle("Listar Clientes (Cards)");
+
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloPretoFragment()).commit();
@@ -145,6 +151,9 @@ public class MainActivity extends AppCompatActivity
 
             nav_listar_clientes = menu.findItem(R.id.nav_lista_de_clientes);
             nav_listar_clientes.setTitle("Listar Clientes");
+
+            nav_listar_clientes_card = menu.findItem(R.id.nav_lista_de_clientes_card);
+            nav_listar_clientes_card.setTitle("Listar Clientes (Cards)");
 
             // TODO: Mudar a cor de todos os itens do menu programaticamente
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
@@ -173,10 +182,43 @@ public class MainActivity extends AppCompatActivity
             nav_add_cliente = menu.findItem(R.id.nav_adicionar_cliente);
             nav_add_cliente.setTitle("Adicionar Cliente ");
 
+            nav_listar_clientes_card = menu.findItem(R.id.nav_lista_de_clientes_card);
+            nav_listar_clientes_card.setTitle("Listar Clientes (Cards)");
+
             // TODO: Mudar a cor de todos os itens do menu programaticamente
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new ListarClientesFragment()).commit();
+
+        } else if (id == R.id.nav_lista_de_clientes_card) {
+
+            menu = navigationView.getMenu();
+
+            nav_listar_clientes_card = menu.findItem(R.id.nav_lista_de_clientes_card);
+            nav_listar_clientes_card.setTitle("Listar Clientes (Cards) Ativado ");
+
+            nav_listar_clientes = menu.findItem(R.id.nav_lista_de_clientes);
+            nav_listar_clientes.setTitle("Listar Clientes  ");
+
+            nav_preto = menu.findItem(R.id.nav_preto);
+            nav_preto.setTitle("Preto ");
+
+            nav_preto = menu.findItem(R.id.nav_preto);
+            nav_preto.setTitle("Preto ");
+
+            nav_vermelho = menu.findItem(R.id.nav_vermelho);
+            nav_vermelho.setTitle("Vermelho");
+
+            nav_azul = menu.findItem(R.id.nav_azul);
+            nav_azul.setTitle("Azul");
+
+            nav_add_cliente = menu.findItem(R.id.nav_adicionar_cliente);
+            nav_add_cliente.setTitle("Adicionar Cliente ");
+
+            // TODO: Mudar a cor de todos os itens do menu programaticamente
+            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ListarClientesCardsFragment()).commit();
 
         } else if (id == R.id.nav_azul) {
 
@@ -196,6 +238,9 @@ public class MainActivity extends AppCompatActivity
 
             nav_listar_clientes = menu.findItem(R.id.nav_lista_de_clientes);
             nav_listar_clientes.setTitle("Listar Clientes");
+
+            nav_listar_clientes_card = menu.findItem(R.id.nav_lista_de_clientes_card);
+            nav_listar_clientes_card.setTitle("Listar Clientes (Cards)");
 
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
@@ -219,6 +264,9 @@ public class MainActivity extends AppCompatActivity
 
             nav_listar_clientes = menu.findItem(R.id.nav_lista_de_clientes);
             nav_listar_clientes.setTitle("Listar Clientes");
+
+            nav_listar_clientes_card = menu.findItem(R.id.nav_lista_de_clientes_card);
+            nav_listar_clientes_card.setTitle("Listar Clientes (Cards)");
 
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 

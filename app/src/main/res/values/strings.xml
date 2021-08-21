@@ -8,10 +8,12 @@
     <string name="action_settings">Sair</string>
 
     <string name="fragmento_listar_clientes">Lista de Clientes</string>
+    <string name="fragmento_listar_clientes_cards">Lista de Clientes (CARDS)</string>
 
     <!-- Opções do Menu Lateral -->
     <string name="fragmento_adicionar_cliente">Adicionar Cliente</string>
     <string name="fragmento_lista_de_clientes">Listar Clientes</string>
+    <string name="fragmento_lista_de_clientes_card">Listar Clientes (Cards)</string>
     <string name="fragmento_preto">Fragmento Preto</string>
     <string name="fragmento_vermelho">Fragmento Vermelho</string>
     <string name="fragmento_azul">Fragmento Azul</string>
