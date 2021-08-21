@@ -16,4 +16,7 @@
     <!-- Opções do Menu Principal -->
     <string name="meu_perfil">Meu Perfil</string>
 
+    <!-- Layout Novo Cliente -->
+    <string name="novo_cliente">Adicionar Novo Cliente</string>
+
 </resources>
