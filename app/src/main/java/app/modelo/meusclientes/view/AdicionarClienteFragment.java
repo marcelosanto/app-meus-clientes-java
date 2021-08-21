@@ -1,6 +1,8 @@
 package app.modelo.meusclientes.view;
 
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +44,7 @@ public class AdicionarClienteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view =  inflater.inflate(R.layout.fragment_adicionar_cliente, container, false);
+        view = inflater.inflate(R.layout.fragment_adicionar_cliente, container, false);
 
         iniciarComponentesDeLayout();
 
@@ -52,11 +54,10 @@ public class AdicionarClienteFragment extends Fragment {
     }
 
 
-
     /**
      * Inicializar os componentes da tela
      * para adicionar os clientes
-     * */
+     */
     private void iniciarComponentesDeLayout() {
         txtTitulo = view.findViewById(R.id.txtTitulo);
         txtTitulo.setText(R.string.novo_cliente);
@@ -76,7 +77,7 @@ public class AdicionarClienteFragment extends Fragment {
         btnCancelar = view.findViewById(R.id.btnCancelar);
         btnSalvar = view.findViewById(R.id.btnSalvar);
 
-        novoCliente = new Cliente();
+
         clienteController = new ClienteController(getContext());
 
     }
@@ -92,7 +93,63 @@ public class AdicionarClienteFragment extends Fragment {
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clienteController.incluir(novoCliente);
+                boolean isDadosOk = true;
+
+                if (TextUtils.isEmpty(editNome.getText())) {
+                    isDadosOk = false;
+                    editNome.setError("Digite o nome completo...");
+                    editNome.requestFocus();
+                }
+                if (TextUtils.isEmpty(editTelefone.getText())) {
+                    isDadosOk = false;
+                    editTelefone.setError("Digite o numero do telefone...");
+                    editTelefone.requestFocus();
+                }
+                if (TextUtils.isEmpty(editEmail.getText())) {
+                    isDadosOk = false;
+                    editEmail.setError("Digite seu email...");
+                    editEmail.requestFocus();
+                }
+                if (TextUtils.isEmpty(editCep.getText())) {
+                    isDadosOk = false;
+                    editCep.setError("Digite o CEP...");
+                    editCep.requestFocus();
+                }
+                if (TextUtils.isEmpty(editLogradouro.getText())) {
+                    isDadosOk = false;
+                    editLogradouro.setError("Digite o Logradouro...");
+                    editLogradouro.requestFocus();
+                }
+                if (TextUtils.isEmpty(editNumero.getText())) {
+                    isDadosOk = false;
+                    editNumero.setError("Digite o numero da casa...");
+                    editNumero.requestFocus();
+                }
+                if (TextUtils.isEmpty(editBairro.getText())) {
+                    isDadosOk = false;
+                    editBairro.setError("Digite o nome do Bairro...");
+                    editBairro.requestFocus();
+                }
+                if (TextUtils.isEmpty(editCidade.getText())) {
+                    isDadosOk = false;
+                    editCidade.setError("Digite o nome da Cidade...");
+                    editCidade.requestFocus();
+                }
+                if (TextUtils.isEmpty(editEstado.getText())) {
+                    isDadosOk = false;
+                    editEstado.setError("Digite o nome do Estado...");
+                    editEstado.requestFocus();
+                }
+
+                if (isDadosOk) {
+                    novoCliente = new Cliente(editNome.getText().toString(), editTelefone.getText().toString(), editEmail.getText().toString(), Integer.parseInt(editCep.getText().toString()),editLogradouro.getText().toString(),editNumero.getText().toString(),editBairro.getText().toString(),editCidade.getText().toString(),editEstado.getText().toString(), chkTermosdeUso.isChecked());
+                    clienteController.incluir(novoCliente);
+
+                    Log.i("log_add_cliente", "onClick: Dados corretos");
+                }
+                {
+                    Log.i("log_add_cliente", "onClick: Dados incorreto");
+                }
             }
         });
     }

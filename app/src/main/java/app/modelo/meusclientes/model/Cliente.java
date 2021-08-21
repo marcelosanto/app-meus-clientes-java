@@ -14,6 +14,19 @@ public class Cliente {
     private String estado;
     private boolean termosDeUso;
 
+    public Cliente(String nome, String email, String telefone, int cep, String logradouro, String numero, String bairro, String cidade, String estado, boolean termosDeUso) {
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.cep = cep;
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.termosDeUso = termosDeUso;
+    }
+
     public int getId() {
         return id;
     }
