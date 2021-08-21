@@ -7,11 +7,15 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Sair</string>
 
+    <string name="fragmento_listar_clientes">Lista de Clientes</string>
+
     <!-- Opções do Menu Lateral -->
     <string name="fragmento_adicionar_cliente">Adicionar Cliente</string>
+    <string name="fragmento_lista_de_clientes">Listar Clientes</string>
     <string name="fragmento_preto">Fragmento Preto</string>
     <string name="fragmento_vermelho">Fragmento Vermelho</string>
     <string name="fragmento_azul">Fragmento Azul</string>
+
 
     <!-- Opções do Menu Principal -->
     <string name="meu_perfil">Meu Perfil</string>

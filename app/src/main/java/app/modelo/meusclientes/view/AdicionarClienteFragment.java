@@ -141,6 +141,12 @@ public class AdicionarClienteFragment extends Fragment {
                     editEstado.requestFocus();
                 }
 
+                if(!chkTermosdeUso.isChecked()){
+                    isDadosOk = false;
+                    chkTermosdeUso.setError("");
+                    chkTermosdeUso.requestFocus();
+                }
+
                 if (isDadosOk) {
                     novoCliente = new Cliente(editNome.getText().toString(), editTelefone.getText().toString(), editEmail.getText().toString(), Integer.parseInt(editCep.getText().toString()), editLogradouro.getText().toString(), editNumero.getText().toString(), editBairro.getText().toString(), editCidade.getText().toString(), editEstado.getText().toString(), chkTermosdeUso.isChecked());
                     clienteController.incluir(novoCliente);

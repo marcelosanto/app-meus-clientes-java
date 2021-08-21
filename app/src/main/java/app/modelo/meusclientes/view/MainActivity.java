@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView;
 
     Menu menu;
-    MenuItem nav_preto, nav_vermelho, nav_azul, nav_add_cliente;
+    MenuItem nav_preto, nav_vermelho, nav_azul, nav_add_cliente, nav_listar_clientes;
 
 
     @Override
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity
 
         fragmentManager = getSupportFragmentManager();
 
-        fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloVermelhoFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.content_fragment, new ListarClientesFragment()).commit();
 
         ClienteController clienteController = new ClienteController(getBaseContext());
     }
@@ -119,6 +119,9 @@ public class MainActivity extends AppCompatActivity
             nav_add_cliente = menu.findItem(R.id.nav_adicionar_cliente);
             nav_add_cliente.setTitle("Adicionar Cliente");
 
+            nav_listar_clientes = menu.findItem(R.id.nav_lista_de_clientes);
+            nav_listar_clientes.setTitle("Listar Clientes");
+
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloPretoFragment()).commit();
@@ -136,13 +139,44 @@ public class MainActivity extends AppCompatActivity
 
             nav_azul = menu.findItem(R.id.nav_azul);
             nav_azul.setTitle("Azul");
+
+            nav_add_cliente = menu.findItem(R.id.nav_adicionar_cliente);
+            nav_add_cliente.setTitle("Adicionar Cliente ");
+
+            nav_listar_clientes = menu.findItem(R.id.nav_lista_de_clientes);
+            nav_listar_clientes.setTitle("Listar Clientes");
+
+            // TODO: Mudar a cor de todos os itens do menu programaticamente
+            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloVermelhoFragment()).commit();
+
+        } else if (id == R.id.nav_lista_de_clientes) {
+
+            menu = navigationView.getMenu();
+
+            nav_listar_clientes = menu.findItem(R.id.nav_lista_de_clientes);
+            nav_listar_clientes.setTitle("Listar Clientes Ativado ");
+
+            nav_preto = menu.findItem(R.id.nav_preto);
+            nav_preto.setTitle("Preto ");
+
+            nav_preto = menu.findItem(R.id.nav_preto);
+            nav_preto.setTitle("Preto ");
+
+            nav_vermelho = menu.findItem(R.id.nav_vermelho);
+            nav_vermelho.setTitle("Vermelho");
+
+            nav_azul = menu.findItem(R.id.nav_azul);
+            nav_azul.setTitle("Azul");
+
             nav_add_cliente = menu.findItem(R.id.nav_adicionar_cliente);
             nav_add_cliente.setTitle("Adicionar Cliente ");
 
             // TODO: Mudar a cor de todos os itens do menu programaticamente
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloVermelhoFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ListarClientesFragment()).commit();
 
         } else if (id == R.id.nav_azul) {
 
@@ -159,6 +193,9 @@ public class MainActivity extends AppCompatActivity
 
             nav_add_cliente = menu.findItem(R.id.nav_adicionar_cliente);
             nav_add_cliente.setTitle("Adicionar Cliente ");
+
+            nav_listar_clientes = menu.findItem(R.id.nav_lista_de_clientes);
+            nav_listar_clientes.setTitle("Listar Clientes");
 
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
@@ -179,6 +216,9 @@ public class MainActivity extends AppCompatActivity
 
             nav_azul = menu.findItem(R.id.nav_azul);
             nav_azul.setTitle("Azul");
+
+            nav_listar_clientes = menu.findItem(R.id.nav_lista_de_clientes);
+            nav_listar_clientes.setTitle("Listar Clientes");
 
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
