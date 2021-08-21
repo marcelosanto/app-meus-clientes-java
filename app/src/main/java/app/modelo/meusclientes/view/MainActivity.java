@@ -29,19 +29,17 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView;
 
     Menu menu;
-    MenuItem nav_preto;
-    MenuItem nav_vermelho;
-    MenuItem nav_azul;
+    MenuItem nav_preto, nav_vermelho, nav_azul, nav_add_cliente;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar =  findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab =   findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,7 +61,6 @@ public class MainActivity extends AppCompatActivity
         fragmentManager = getSupportFragmentManager();
 
         fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloVermelhoFragment()).commit();
-
 
         ClienteController clienteController = new ClienteController(getBaseContext());
     }
@@ -119,6 +116,9 @@ public class MainActivity extends AppCompatActivity
             nav_azul = menu.findItem(R.id.nav_azul);
             nav_azul.setTitle("Azul");
 
+            nav_add_cliente = menu.findItem(R.id.nav_adicionar_cliente);
+            nav_add_cliente.setTitle("Adicionar Cliente");
+
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloPretoFragment()).commit();
@@ -136,6 +136,8 @@ public class MainActivity extends AppCompatActivity
 
             nav_azul = menu.findItem(R.id.nav_azul);
             nav_azul.setTitle("Azul");
+            nav_add_cliente = menu.findItem(R.id.nav_adicionar_cliente);
+            nav_add_cliente.setTitle("Adicionar Cliente ");
 
             // TODO: Mudar a cor de todos os itens do menu programaticamente
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
@@ -155,9 +157,32 @@ public class MainActivity extends AppCompatActivity
             nav_azul = menu.findItem(R.id.nav_azul);
             nav_azul.setTitle("Azul Ativado");
 
+            nav_add_cliente = menu.findItem(R.id.nav_adicionar_cliente);
+            nav_add_cliente.setTitle("Adicionar Cliente ");
+
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloAzulFragment()).commit();
+
+        } else if (id == R.id.nav_adicionar_cliente) {
+
+            menu = navigationView.getMenu();
+
+            nav_add_cliente = menu.findItem(R.id.nav_adicionar_cliente);
+            nav_add_cliente.setTitle("Adicionar Cliente Ativado");
+
+            nav_preto = menu.findItem(R.id.nav_preto);
+            nav_preto.setTitle("Preto");
+
+            nav_vermelho = menu.findItem(R.id.nav_vermelho);
+            nav_vermelho.setTitle("Vermelho");
+
+            nav_azul = menu.findItem(R.id.nav_azul);
+            nav_azul.setTitle("Azul");
+
+            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new AdicionarClienteFragment()).commit();
 
         }
 

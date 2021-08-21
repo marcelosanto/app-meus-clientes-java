@@ -8,10 +8,12 @@
     <string name="action_settings">Sair</string>
 
     <!-- Opções do Menu Lateral -->
+    <string name="fragmento_adicionar_cliente">Adicionar Cliente</string>
     <string name="fragmento_preto">Fragmento Preto</string>
     <string name="fragmento_vermelho">Fragmento Vermelho</string>
     <string name="fragmento_azul">Fragmento Azul</string>
 
     <!-- Opções do Menu Principal -->
     <string name="meu_perfil">Meu Perfil</string>
+
 </resources>
