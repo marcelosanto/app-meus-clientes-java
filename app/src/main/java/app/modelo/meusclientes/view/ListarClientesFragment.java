@@ -74,13 +74,8 @@ public class ListarClientesFragment extends Fragment {
 
         clienteList = clienteController.listar();
 
-        clientes = new ArrayList<>();
-
-        //TODO - Implementar regra de negócio na controladora da classe Cliente
-
-        for (Cliente obj: clienteList) {
-            clientes.add(obj.getId()+", "+obj.getNome());
-        }
+        //clientes = new ArrayList<>();
+        clientes = clienteController.gerarListaDeClientesListView();
 
         clienteAdapter = new ArrayAdapter<>(getContext(), R.layout.listar_cliente_item, R.id.txtItemLista, clientes);
         listView.setAdapter(clienteAdapter);
