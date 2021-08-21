@@ -14,6 +14,8 @@ public class Cliente {
     private String estado;
     private boolean termosDeUso;
 
+    public Cliente(){}
+
     public Cliente(String nome, String email, String telefone, int cep, String logradouro, String numero, String bairro, String cidade, String estado, boolean termosDeUso) {
         this.nome = nome;
         this.email = email;
