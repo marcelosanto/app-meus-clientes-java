@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView;
 
     Menu menu;
-    MenuItem nav_preto, nav_vermelho, nav_azul, nav_add_cliente, nav_listar_clientes, nav_listar_clientes_card;
+    MenuItem nav_preto, nav_vermelho, nav_azul, nav_add_cliente,nav_add_cliente_cards, nav_listar_clientes, nav_listar_clientes_card;
 
 
     @Override
@@ -128,6 +128,9 @@ public class MainActivity extends AppCompatActivity
             nav_listar_clientes_card = menu.findItem(R.id.nav_lista_de_clientes_card);
             nav_listar_clientes_card.setTitle("Listar Clientes (Cards)");
 
+            nav_add_cliente_cards = menu.findItem(R.id.nav_adicionar_cliente_cards);
+            nav_add_cliente_cards.setTitle("Adicionar Cliente CARDS");
+
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloPretoFragment()).commit();
@@ -154,6 +157,9 @@ public class MainActivity extends AppCompatActivity
 
             nav_listar_clientes_card = menu.findItem(R.id.nav_lista_de_clientes_card);
             nav_listar_clientes_card.setTitle("Listar Clientes (Cards)");
+
+            nav_add_cliente_cards = menu.findItem(R.id.nav_adicionar_cliente_cards);
+            nav_add_cliente_cards.setTitle("Adicionar Cliente CARDS");
 
             // TODO: Mudar a cor de todos os itens do menu programaticamente
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
@@ -185,6 +191,9 @@ public class MainActivity extends AppCompatActivity
             nav_listar_clientes_card = menu.findItem(R.id.nav_lista_de_clientes_card);
             nav_listar_clientes_card.setTitle("Listar Clientes (Cards)");
 
+            nav_add_cliente_cards = menu.findItem(R.id.nav_adicionar_cliente_cards);
+            nav_add_cliente_cards.setTitle("Adicionar Cliente CARDS");
+
             // TODO: Mudar a cor de todos os itens do menu programaticamente
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
@@ -215,6 +224,9 @@ public class MainActivity extends AppCompatActivity
             nav_add_cliente = menu.findItem(R.id.nav_adicionar_cliente);
             nav_add_cliente.setTitle("Adicionar Cliente ");
 
+            nav_add_cliente_cards = menu.findItem(R.id.nav_adicionar_cliente_cards);
+            nav_add_cliente_cards.setTitle("Adicionar Cliente CARDS");
+
             // TODO: Mudar a cor de todos os itens do menu programaticamente
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
@@ -242,6 +254,9 @@ public class MainActivity extends AppCompatActivity
             nav_listar_clientes_card = menu.findItem(R.id.nav_lista_de_clientes_card);
             nav_listar_clientes_card.setTitle("Listar Clientes (Cards)");
 
+            nav_add_cliente_cards = menu.findItem(R.id.nav_adicionar_cliente_cards);
+            nav_add_cliente_cards.setTitle("Adicionar Cliente CARDS");
+
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloAzulFragment()).commit();
@@ -268,9 +283,41 @@ public class MainActivity extends AppCompatActivity
             nav_listar_clientes_card = menu.findItem(R.id.nav_lista_de_clientes_card);
             nav_listar_clientes_card.setTitle("Listar Clientes (Cards)");
 
+            nav_add_cliente_cards = menu.findItem(R.id.nav_adicionar_cliente_cards);
+            nav_add_cliente_cards.setTitle("Adicionar Cliente CARDS");
+
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new AdicionarClienteFragment()).commit();
+
+        } else if (id == R.id.nav_adicionar_cliente_cards) {
+
+            menu = navigationView.getMenu();
+
+            nav_add_cliente_cards = menu.findItem(R.id.nav_adicionar_cliente_cards);
+            nav_add_cliente_cards.setTitle("Adicionar Cliente CARDS Ativado");
+
+            nav_add_cliente = menu.findItem(R.id.nav_adicionar_cliente);
+            nav_add_cliente.setTitle("Adicionar Cliente");
+
+            nav_preto = menu.findItem(R.id.nav_preto);
+            nav_preto.setTitle("Preto");
+
+            nav_vermelho = menu.findItem(R.id.nav_vermelho);
+            nav_vermelho.setTitle("Vermelho");
+
+            nav_azul = menu.findItem(R.id.nav_azul);
+            nav_azul.setTitle("Azul");
+
+            nav_listar_clientes = menu.findItem(R.id.nav_lista_de_clientes);
+            nav_listar_clientes.setTitle("Listar Clientes");
+
+            nav_listar_clientes_card = menu.findItem(R.id.nav_lista_de_clientes_card);
+            nav_listar_clientes_card.setTitle("Listar Clientes (Cards)");
+
+            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new AdicionarClienteCardFragment()).commit();
 
         }
 

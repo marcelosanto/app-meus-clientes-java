@@ -12,6 +12,7 @@
 
     <!-- Opções do Menu Lateral -->
     <string name="fragmento_adicionar_cliente">Adicionar Cliente</string>
+    <string name="fragmento_adicionar_cliente_cards">Adicionar Cliente (CARDS)</string>
     <string name="fragmento_lista_de_clientes">Listar Clientes</string>
     <string name="fragmento_lista_de_clientes_card">Listar Clientes (Cards)</string>
     <string name="fragmento_preto">Fragmento Preto</string>
@@ -24,5 +25,8 @@
 
     <!-- Layout Novo Cliente -->
     <string name="novo_cliente">Adicionar Novo Cliente</string>
+    <string name="novo_cliente_card">Adicionar Novo Cliente CARD</string>
+    <string name="perfil_e_contato">Perfil e Contato</string>
+    <string name="endere_o">Endereço</string>
 
 </resources>
