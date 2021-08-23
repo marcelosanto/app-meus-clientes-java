@@ -17,4 +17,13 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="BotaCustomizado" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">#fcfcfc</item>
+        <item name="backgroundTint">#8a9b6c</item>
+    </style>
+
+    <style name="BotaoCustom" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">#e7e7e7</item>
+        <item name="backgroundTint">#F44336</item>
+    </style>
 </resources>
